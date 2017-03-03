@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/margin_small"
+    android:layout_marginTop="@dimen/margin_small"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
+    android:orientation="vertical"
+    >
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      >
+    <ImageView
+        android:id="@+id/artist_item_image"
+        android:layout_width="match_parent"
+        android:layout_height="144dp"
+        android:background="@color/background_light"
+        android:contentDescription="@null"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_small"
+        >
+      <TextView
+          android:id="@+id/artist_item_name"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:ellipsize="end"
+          android:maxLines="1"
+          tools:text="Arctic Monkeys"
+          style="?android:attr/textAppearanceMedium"
+          />
+
+      <TextView
+          android:id="@+id/artist_item_stats"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          tools:text="123 plays"
+          style="?android:attr/textAppearanceSmall"
+          />
+    </LinearLayout>
+  </LinearLayout>
+</android.support.v7.widget.CardView>

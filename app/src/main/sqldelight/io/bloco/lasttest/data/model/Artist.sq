@@ -1,0 +1,27 @@
+import java.util.Date;
+
+CREATE TABLE artist (
+  id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  mbid TEXT,
+  name TEXT,
+  url TEXT,
+  imageUrl TEXT,
+  playCount INTEGER
+);
+
+insertQuery:
+INSERT INTO artist(mbid, name, url, imageUrl, playCount)
+VALUES (?, ?, ?, ?, ?);
+
+deleteAll:
+DELETE FROM artist;
+
+select_all:
+SELECT *
+FROM artist
+ORDER BY playCount DESC;
+
+select_by_id:
+SELECT *
+FROM artist
+WHERE id = ?;

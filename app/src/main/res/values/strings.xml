@@ -1,0 +1,17 @@
+<resources>
+  <string name="app_name">Last Test</string>
+  <string name="logout">Logout</string>
+  <string name="main_artists_empty">No artists found</string>
+  <string name="main_artists_error">Error loading artists</string>
+  <string name="login_submit">Login with Last.fm</string>
+  <string name="login_user_missing">User missing</string>
+  <string name="login_user">Last.fm username</string>
+  <string name="login_user_too_short">Username too short</string>
+  <string name="login_submit_error">Error logging in on Last.fm</string>
+  <string name="login_user_too_large">Last.fm username too large</string>
+  <string name="login_submitting">Logging in</string>
+  <string name="main_user_stats">%d plays</string>
+  <string name="artist_stats">%d plays this month</string>
+  <string name="artist_tracks_empty">No tracks found</string>
+  <string name="artist_tracks_error">Error loading tracks</string>
+</resources>

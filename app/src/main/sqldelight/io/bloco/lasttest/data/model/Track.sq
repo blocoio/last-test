@@ -1,0 +1,33 @@
+
+CREATE TABLE track (
+  id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  mbid TEXT,
+  name TEXT,
+  url TEXT,
+  imageUrl TEXT,
+  playCount INTEGER,
+  listeners INTEGER,
+  artistId INTEGER NOT NULL,
+  FOREIGN KEY (artistId) REFERENCES artist(id)
+);
+
+insertQuery:
+INSERT INTO track(mbid, name, url, imageUrl, playCount, listeners, artistId)
+VALUES (?, ?, ?, ?, ?, ?, ?);
+
+deleteByArtistId:
+DELETE FROM track
+WHERE artistId = ?;
+
+deleteAll:
+DELETE FROM track;
+
+select_by_artist_id:
+SELECT *
+FROM track
+WHERE artistId = ?;
+
+select_by_id:
+SELECT *
+FROM track
+WHERE id = ?;
