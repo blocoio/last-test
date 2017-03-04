@@ -12,12 +12,20 @@ public class TopTracksResponse {
     return topTracks;
   }
 
+  public void setTopTracks(TopTrack topTracks) {
+    this.topTracks = topTracks;
+  }
+
   public static class TopTrack {
     @SerializedName("track")
     private List<Track> tracks;
 
     public List<Track> getTracks() {
       return tracks;
+    }
+
+    public void setTracks(List<Track> tracks) {
+      this.tracks = tracks;
     }
   }
 }

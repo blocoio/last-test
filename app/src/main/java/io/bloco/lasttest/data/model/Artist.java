@@ -33,7 +33,7 @@ public class Artist implements ArtistModel {
   }
 
   @Nullable @Override public String imageUrl() {
-    if (imageUrl == null) {
+    if (imageUrl == null && images != null && !images.isEmpty()) {
       imageUrl = images.get(images.size() - 1).getUrl();
     }
     return imageUrl;
@@ -65,6 +65,19 @@ public class Artist implements ArtistModel {
 
   public void setPlayCount(Long playCount) {
     this.playCount = playCount;
+  }
+
+  @Override public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    Artist artist = (Artist) o;
+
+    return id == artist.id;
+  }
+
+  @Override public int hashCode() {
+    return (int) (id ^ (id >>> 32));
   }
 
   public static final Factory<Artist> FACTORY = new Factory<>(new Creator<Artist>() {

@@ -4,6 +4,7 @@ import android.support.test.InstrumentationRegistry;
 import io.bloco.lasttest.AndroidApplication;
 import io.bloco.lasttest.common.di.ApplicationComponent;
 import io.bloco.lasttest.data.model.User;
+import io.bloco.lasttest.factories.UserFactory;
 
 public class TestStateManager {
 

@@ -1,4 +1,4 @@
-package io.bloco.lasttest.testing;
+package io.bloco.lasttest.factories;
 
 import io.bloco.faker.Faker;
 import java.util.ArrayList;

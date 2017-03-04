@@ -25,7 +25,6 @@ android {
     }
   }
 
-  /*
   // Share code between test environments
   sourceSets {
     String sharedTestDir = 'src/sharedTest/java'
@@ -36,7 +35,6 @@ android {
       java.srcDir sharedTestDir
     }
   }
-  */
 }
 
 dependencies {

@@ -37,7 +37,9 @@ public class GetArtistTopTracks {
     }
 
     Artist artist = artistRepository.get(artistId);
-    lastFmApi.getArtistTopTracks(artist.name()).enqueue(new Callback<TopTracksResponse>() {
+    lastFmApi.getArtistTopTracks(artist.name())
+
+        .enqueue(new Callback<TopTracksResponse>() {
       @Override
       public void onResponse(Call<TopTracksResponse> call, Response<TopTracksResponse> response) {
         if (!response.isSuccessful()) {

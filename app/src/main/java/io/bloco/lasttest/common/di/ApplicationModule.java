@@ -39,8 +39,12 @@ import io.bloco.lasttest.data.database.DatabaseHelper;
   }
 
   @Provides @PerApplication
-  public SharedPreferences sharedPreferences(Context context) {
-    return context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE);
+  public SharedPreferences sharedPreferences(Context context, AndroidApplication.Mode appMode) {
+    String name = context.getPackageName();
+    if (appMode == AndroidApplication.Mode.TEST) {
+      name += "_test";
+    }
+    return context.getSharedPreferences(name, Context.MODE_PRIVATE);
   }
 
   @Provides @PerApplication

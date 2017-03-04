@@ -1,6 +1,8 @@
 package io.bloco.lasttest.common.di;
 
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
+import com.google.gson.Gson;
 import dagger.Component;
 import io.bloco.lasttest.data.ArtistRepository;
 import io.bloco.lasttest.data.UserRepository;
@@ -19,4 +21,8 @@ public interface ApplicationComponent {
   SharedPreferences sharePreferences();
 
   Logout logout();
+
+  Gson gson();
+
+  SQLiteDatabase db();
 }
