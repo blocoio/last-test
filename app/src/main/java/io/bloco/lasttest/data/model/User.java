@@ -71,6 +71,9 @@ public class User {
   }
 
   public String getImageUrl() {
+    if (images == null || images.isEmpty()) {
+      return null;
+    }
     return images.get(images.size()-1).getUrl();
   }
 

@@ -1,10 +1,13 @@
 package io.bloco.lasttest;
 
 import android.app.Application;
+import io.bloco.lasttest.common.di.ApiModule;
 import io.bloco.lasttest.common.di.ApplicationComponent;
 import io.bloco.lasttest.common.di.ApplicationModule;
 import io.bloco.lasttest.common.di.DaggerApplicationComponent;
 import timber.log.Timber;
+
+import static io.bloco.lasttest.AndroidApplication.Mode.TEST;
 
 public class AndroidApplication extends Application {
 
@@ -31,14 +34,17 @@ public class AndroidApplication extends Application {
 
   private void initializeInjector() {
     this.applicationComponent =
-        DaggerApplicationComponent.builder().applicationModule(new ApplicationModule(this)).build();
+        DaggerApplicationComponent.builder()
+            .applicationModule(new ApplicationModule(this))
+            .apiModule(new ApiModule())
+            .build();
   }
 
   // Test loading a random test class, to check if we're in test mode
   private void checkTestMode() {
     try {
       getClassLoader().loadClass("io.bloco.lasttest.testing.Wait");
-      mode = Mode.TEST;
+      mode = TEST;
     } catch (final Exception e) {
       mode = Mode.NORMAL;
     }

@@ -5,7 +5,9 @@ import android.support.test.espresso.ViewInteraction;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import io.bloco.lasttest.R;
+import io.bloco.lasttest.testing.TestStateManager;
 import io.bloco.lasttest.testing.Wait;
+import org.junit.After;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,6 +27,11 @@ public class LoginActivityTest {
   @Rule
   public ActivityTestRule<LoginActivity> activityTestRule =
       new ActivityTestRule<>(LoginActivity.class);
+
+  @After
+  public void tearDown() throws Exception {
+    new TestStateManager().logout();
+  }
 
   @Test
   public void nameMissing() throws Exception {
