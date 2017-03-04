@@ -5,7 +5,7 @@ import android.support.test.espresso.ViewInteraction;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import io.bloco.lasttest.R;
-import io.bloco.lasttest.ui.testing.Wait;
+import io.bloco.lasttest.testing.Wait;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -54,8 +54,6 @@ public class LoginActivityTest {
   public void loginSuccessful() throws Exception {
     onNameField().perform(typeText("neon_prannock"), closeSoftKeyboard());
     loginSubmit();
-    onView(withText(R.string.login_submitting)).check(matches(isDisplayed()));
-    Thread.sleep(1000);
     onView(withText(R.string.app_name)).check(matches(isDisplayed()));
   }
 

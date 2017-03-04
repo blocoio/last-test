@@ -13,8 +13,8 @@ public class AndroidApplication extends Application {
 
   @Override public void onCreate() {
     super.onCreate();
-    this.initializeInjector();
     checkTestMode();
+    this.initializeInjector();
 
     if (BuildConfig.DEBUG) {
       Timber.plant(new Timber.DebugTree());

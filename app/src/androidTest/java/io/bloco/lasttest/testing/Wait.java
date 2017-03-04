@@ -1,4 +1,4 @@
-package io.bloco.lasttest.ui.testing;
+package io.bloco.lasttest.testing;
 
 public class Wait {
 

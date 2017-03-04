@@ -28,11 +28,11 @@ public class MockApiInterceptor implements Interceptor {
     String requestQuery = request.url().encodedQuery();
 
     if (requestQuery.contains("user.getinfo")) {
-      return new MockResponse(loadJson("user.json"));
+      return new MockResponse(loadJson("user"));
     } else if (requestQuery.contains("user.gettopartist")) {
-      return new MockResponse(loadJson("artists.json"));
+      return new MockResponse(loadJson("artists"));
     } else if (requestQuery.contains("artist.gettoptracks")) {
-      return new MockResponse(loadJson("artists.json"));
+      return new MockResponse(loadJson("artists"));
     } else {
       return new MockResponse("{}");
     }
