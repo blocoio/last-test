@@ -22,6 +22,10 @@ import io.bloco.lasttest.data.database.DatabaseHelper;
     return application;
   }
 
+  @Provides @PerApplication public AndroidApplication.Mode appMode() {
+    return application.getMode();
+  }
+
   @Provides @PerApplication public Resources provideResources(Context context) {
     return context.getResources();
   }

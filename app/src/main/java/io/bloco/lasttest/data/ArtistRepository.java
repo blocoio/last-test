@@ -38,7 +38,6 @@ public class ArtistRepository {
         artist.setId(id);
       }
       db.setTransactionSuccessful();
-      Timber.i("SAVE DONE!");
     } catch (Exception exception) {
       Timber.e(exception);
     } finally {
